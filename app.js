@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+let db = require('./dbconfig/db-connect');
 
 let expressHbs =require('express-handlebars');
 
@@ -37,5 +38,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+db.connect(function (err) {
+  if(err){
+    console.log("Unable to Connect Database");
+    process.exit(1);
+  }else {
+    console.log("Shopping Cart Database Connected");
+  }
+})
 
 module.exports = app;
