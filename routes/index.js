@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
 let dbconfig=require('../dbconfig/db-connect');
+let csrf = require('csurf');
+
+let csrfProtection = csrf();
+router.use(csrfProtection);
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('shop/index', { title: 'Express' });
   console.log('connected successfully');
 
-  let resultArray =[];
 
   dbconfig.get().collection('product').find().toArray(function (err, docs) {
     if(!err){
@@ -17,4 +21,9 @@ router.get('/', function(req, res, next) {
   });
 
 });
+
+router.get('/user/signup',function (req,res) {
+  res.render('user/signup',{csrfToken:req.csrfToken});
+});
+
 module.exports = router;
