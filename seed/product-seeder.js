@@ -7,7 +7,7 @@ dbconfig.connect(function (err) {
         console.log('DB-Connection Error');
         process.exit(1);
     }else{
-        console.log('connected successfully')
+        console.log('connected successfully');
 
         dbconfig.get().collection('product').insertMany([{
             imagePath:'https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633',

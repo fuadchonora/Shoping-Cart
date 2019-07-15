@@ -22,8 +22,8 @@ module.exports.connect = function (done){
             return done(err);
 
         //Connected Successfully
-        const dbs =client.db(dbName);
-        state.db=dbs;
+        const dbs = client.db(dbName);
+        state.db = dbs;
         done();
     })
 };

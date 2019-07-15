@@ -46,6 +46,6 @@ db.connect(function (err) {
   }else {
     console.log("Shopping Cart Database Connected");
   }
-})
+});
 
 module.exports = app;
