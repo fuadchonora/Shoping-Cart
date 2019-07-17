@@ -2,17 +2,17 @@
     <div class="col-md-4 col-md-offset-4">
         <h1>Signup</h1>
         <br>
-        <form action="" method="post">
+        <form action="/user/signup" method="post">
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="text" class="form-control" name="email" id="email">
             </div>
             <div class="form-group">
-                <label for="password">E-mail</label>
-                <input type="hidden" value="{{csrfToken}}" name="_csrf">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" id="password">
             </div>
-            <input type="password" class="form-control" name="password" id="password">
-            <button type="submit">Sign Up</button>
+            <input type="hidden" value="{{csrfToken}}" name="_csrf">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
         {{csrfToken}}
     </div>
