@@ -3,6 +3,13 @@
         <h1>Signup</h1>
         <br>
         <form action="/user/signup" method="post">
+            {{#if hasError}}
+                <div class="alert alert-danger">
+                    {{#each messages}}
+                        <label>{{this}}</label>
+                    {{/each}}
+                </div>
+            {{/if}}
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="text" class="form-control" name="email" id="email">

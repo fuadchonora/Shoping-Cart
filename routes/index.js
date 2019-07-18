@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 let dbconfig=require('../dbconfig/db-connect');
 let csrf = require('csurf');
-let Schema = require('mongoose').Schema;
 let passport = require('passport');
 let bcrypt = require('bcrypt-nodejs');
 
@@ -20,6 +19,10 @@ router.get('/', function(req, res, next) {
       console.log(err);
     }
   });
+
+});
+
+router.get('/add-to-cart/:id', function (req,res, next) {
 
 });
 
